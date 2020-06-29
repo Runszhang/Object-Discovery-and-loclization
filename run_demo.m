@@ -1,7 +1,7 @@
 % The codes are written by Runsheng Zhang. For any problem concerning the code, please feel free to contact Mr. Zhang.
 % This packages are free for academic usage. You can run them at your own risk. For other purposes, please contact Prof. Yaping Huang.
 
-% The codes are corresponding to the deep descriptors *selection* procedure
+% The codes are corresponding to the *mined patterns* procedure
 % of the proposed  method.
 clear all
 
@@ -152,7 +152,7 @@ for i=3:length(voc)
         end  
        
        
-        supp=[8 9 10];%%support value
+        supp=[7 8 9];%%support value
         for sup_i=1:length(supp)  
             sup=supp(sup_i);
             inputFile = fullfile(path,'/transFile',[imagename,'.txt']);
