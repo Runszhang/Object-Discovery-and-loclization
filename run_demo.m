@@ -27,7 +27,7 @@ net.layers(end-5:end)=[]; % Removing the fully connected layers
 net = vl_simplenn_move(net, 'gpu') ;
 disp('CNN model is ready ...');
 
-% load imdb
+
 
 
 %%%%%%VOC2007 6X2%%%%%%%%%%%%
@@ -74,7 +74,7 @@ for i=3:length(voc)
         else    
             im_ = bsxfun(@minus,im_,imresize(imdb.averageImage,[h,w])) ;
         end
-      %% Extracting cnn feature map 
+      %% Extracting cnn feature map
         res = vl_simplenn(net, gpuArray(im_)) ;
         tmp_1 = gather(res(32).x);%net pool5
         tmp_2 = gather(res(29).x);%net relu 5_2
