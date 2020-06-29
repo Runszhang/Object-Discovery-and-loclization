@@ -5,8 +5,8 @@
 % of the proposed  method.
 clear all
 
- addpath([Your Model_PATH  'Model']);
- addpath([Your Matconvnet_PATH '/matconvnet-1.0-beta23']);
+addpath([Your Model_PATH  'Model']);
+addpath([Your Matconvnet_PATH '/matconvnet-1.0-beta23']);
 % Setting the GPU device
 gpu = 3;
 g = gpuDevice(gpu);
@@ -74,7 +74,7 @@ for i=3:length(voc)
         else    
             im_ = bsxfun(@minus,im_,imresize(imdb.averageImage,[h,w])) ;
         end
-      %% Extracting cnn feature map
+      %% Extracting cnn feature map%%%%
         res = vl_simplenn(net, gpuArray(im_)) ;
         tmp_1 = gather(res(32).x);%net pool5
         tmp_2 = gather(res(29).x);%net relu 5_2
@@ -86,7 +86,7 @@ for i=3:length(voc)
            mkdir(fullfile(path,'/relu5_feature'));
         end
         save(fullfile(path ,'/relu5_feature',[imagename,'.mat']),'tmp_2','-v7.3');
- %%  Mining  patterns
+ %%  Mining  patterns%%%%
         tmp_featmap = tmp_1;
         Hrelu=size(tmp_2,1);
         Wrelu=size(tmp_2,2);
