@@ -74,7 +74,7 @@ for i=3:length(voc)
         else    
             im_ = bsxfun(@minus,im_,imresize(imdb.averageImage,[h,w])) ;
         end
-      %% Extracting cnn feature map%%%%
+      %% Extracting cnn feature map%%%%%%%%%%%%%
         res = vl_simplenn(net, gpuArray(im_)) ;
         tmp_1 = gather(res(32).x);%net pool5
         tmp_2 = gather(res(29).x);%net relu 5_2
@@ -86,7 +86,7 @@ for i=3:length(voc)
            mkdir(fullfile(path,'/relu5_feature'));
         end
         save(fullfile(path ,'/relu5_feature',[imagename,'.mat']),'tmp_2','-v7.3');
- %%  Mining  patterns%%%%
+       %%  Mining  patterns%%%%%%%%%%%%%%%%
         tmp_featmap = tmp_1;
         Hrelu=size(tmp_2,1);
         Wrelu=size(tmp_2,2);
@@ -213,7 +213,7 @@ for i=3:length(voc)
                index(rule{inum,1})=rule{inum,2};
         %
            end
- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
            for in=1:length(index)
                if (index1(in)&index(in))==0
                   index(in)=0;
@@ -221,7 +221,7 @@ for i=3:length(voc)
            end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
            Min_region=double(index)';
-           S_map=reshape(index,size(tmp_1,1),size(tmp_1,2)); %%support_map
+           S_map=reshape(Min_region,size(tmp_1,1),size(tmp_1,2)); %%support_map
            if ~exist(fullfile(path,'/support_mask/',num2str(sup)));
               mkdir(fullfile(path,'/support_mask/',num2str(sup)));
            end  
