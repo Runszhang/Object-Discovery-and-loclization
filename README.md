@@ -23,7 +23,7 @@ Please cite our paper in your publications if it helps your research:
 
 
 ## Introduction
-This repository contains the source code of the algorithm described in a  paper (Object Discovery From a Single Unlabeled Image by Mining Frequent Itemset With Multi-scale Features ).This package has been tested using Matlab 2014a on a 64-bit Linux machine. This code is for research purposes only. 
+This repository contains the source code of the algorithm described in a  paper ["Object Discovery From a Single Unlabeled Image by Mining Frequent Itemset With Multi-scale Features"](https://ieeexplore.ieee.org/document/9171559 ).This package has been tested using Matlab 2014a on a 64-bit Linux machine. This code is for research purposes only. 
 
 You will find a demo 'S_map' file for the VOC2007 6X2 dataset. But you need to download the 
 pre-trained VGG-16 model by yourself via http://www.vlfeat.org/matconvnet/pretrained/.
