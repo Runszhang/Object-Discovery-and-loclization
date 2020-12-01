@@ -21,7 +21,7 @@ Please cite our paper in your publications if it helps your research:
 }
 ```
 
-## Citing OLM
+
 ## Introduction
 This repository contains the source code of the algorithm described in a  paper (Object Discovery From a Single Unlabeled Image by Mining Frequent Itemset With Multi-scale Features ).This package has been tested using Matlab 2014a on a 64-bit Linux machine. This code is for research purposes only. 
 
